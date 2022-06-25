@@ -1,0 +1,74 @@
+<!Doctype HTML>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <Title>Stroke Prediction App</Title>
+</head>
+<body>
+
+    <div class="jumbotron text-center" style="color: rgb(30, 32, 32);background-color: aquamarine;">
+        <h1>Stroke Prediction Using Machine Learning</h1>
+        <p><b>Algorithm</b> : Random Forest with 95% accuracy</p>
+        
+        <h4 style="color: black;">{{ prediction_text }}</h4>
+       
+        
+    </div>
+
+    <div class="container">
+        <form action="{{ url_for('result') }}" method="post">
+            <div class="row">
+                <label for="gender">Gender</label>
+                <input type="text" class="form-control" id="gender" name="gender" placeholder="gender">
+            </div>
+
+            <div class="row">
+                <label for="age">Age</label>
+                <input type="text" class="form-control" id="age" name="age" placeholder="Enter your age">
+            </div>
+
+            <div class="row">
+                <label for="hypertension">Hypertension</label>
+                <input type="text" class="form-control" id="hypertension" name="hypertension" placeholder="Enter 1 for Hypertension else 0">
+            </div>
+
+            <div class="row">
+                <label for="heart_disease">Heart Disease</label>
+                <input type="text" class="form-control" id="heart_disease" name="heart_disease" placeholder="Enter 1 for heart disease else 0">
+            </div>
+
+            <div class="row">
+                <label for="ever_married">Married</label>
+                <input type="text" class="form-control" id="ever_married" name="ever_married" placeholder="Enter 1 for married else 0">
+            </div>
+
+            <div class="row">
+                <label for="work_type">Work Type</label>
+                <input type="text" class="form-control" id="work_type" name="work_type" placeholder="Enter 1->Private, 2->Self-employed, 3->Childern, 4->Govt, 5->Unemployed">
+            </div>
+
+            <div class="row">
+                <label for="Residence_type">Residence Type</label>
+                <input type="text" class="form-control" id="Residence_type" name="Residence_type" placeholder="Enter 1 for Urban else 0">
+            </div>
+
+            <div class="row">
+                <label for="avg_glucose_level">Glucose level</label>
+                <input type="text" class="form-control" id="avg_glucose_level" name="avg_glucose_level" placeholder="Enter average glucose level">
+            </div>
+
+            <div class="row">
+                <label for="bmi">BMI</label>
+                <input type="text" class="form-control" id="bmi" name="bmi" placeholder="Enter Your BMI">
+            </div>
+
+            <div class="row">
+                <label for="smoking_status">Do you smoke?</label>
+                <input type="text" class="form-control" id="smoking_status" name="smoking_status" placeholder="1:Never , 2:Unknown ,3:Former ,4:Smokes">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-dark" value="submit">Predict</button>
+            </div>    
+        </form>
+    </div>
+</body>
+</html>
